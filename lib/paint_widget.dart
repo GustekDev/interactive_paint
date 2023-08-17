@@ -13,8 +13,13 @@ class PaintWidget extends StatelessWidget {
       ..relativeLineTo(0, 50)
       ..relativeLineTo(-50, 0)
       ..relativeLineTo(0, -50);
-    return CustomPaint(
-      painter: FilledPathPainter(path: path, color: Colors.teal),
+    return InteractiveViewer(
+      scaleEnabled: true,
+      maxScale: 5,
+      panEnabled: true,
+      child: CustomPaint(
+        painter: FilledPathPainter(path: path, color: Colors.teal),
+      ),
     );
   }
 }
